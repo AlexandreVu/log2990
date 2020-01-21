@@ -1,0 +1,7 @@
+#ignoring .vscode folder but we keep some files for debuging
+/.vscode/chrome
+/.vs/
+
+#Il ne devrait pas y avoir de fichier package json dans ce dossier
+package-lock.json
+package.json
