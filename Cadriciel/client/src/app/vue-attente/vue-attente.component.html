@@ -1,0 +1,12 @@
+<body>
+  <div class="attente" [hidden]="quitter">
+    <h1>En attente d'un autre joueur...</h1>
+    <img src="../assets/img/charge2.gif" alt="Image de chargement">
+    <button class="boutonAnnuler" (click)="retourListeParties()">Annuler</button>
+  </div>
+
+  <div class="quitter" [hidden]="!quitter">
+    <h2>La partie a été supprimée. Cliquer sur OK pour retourner à la liste des parties.</h2>
+    <button class="boutonOK" (click)="retourListeParties()">OK</button>
+  </div>
+</body>

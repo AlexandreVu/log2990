@@ -1,0 +1,98 @@
+body {
+	color: #434e57;
+
+	font-weight: normal;
+	font-style: normal;
+	font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+}
+
+.vueAdministration .bandeEnHautFixe
+{
+    width: 100%;
+    height: 75px;
+    background-color: rgb(32, 77, 97);
+    position: fixed;
+    margin: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+}
+.vueAdministration .zoneBoutonJeu{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vueAdministration .contenuDePage
+{
+    margin-top: 75px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+.vueAdministration .contenuDePage .zoneListeDesParties
+{
+    width: 50%;
+    margin: 50px;
+    margin-left: 100px;
+}
+.vueAdministration .contenuDePage .zoneListeDesParties .listeDesParties
+{
+    margin-top: 7px; 
+    border: 3px solid gray;
+    min-height: 500px;
+    border-radius: 10px;
+    overflow: auto;
+}
+.vueAdministration .contenuDePage .zoneAffichagePartie
+{
+    width: 50%;
+    height: 500px;
+    margin: 50px;
+    margin-right: 100px;
+}
+.vueAdministration .contenuDePage .zoneAffichagePartie .affichagePartie
+{
+    margin-top: 7px; 
+    border: 3px solid gray;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.parties li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+    border-bottom: 1px dotted black;
+}
+
+.parties li:hover {
+    background-color: rgb(32, 77, 97);
+    color: white;
+}
+
+.parties {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+
+}
+
+.parties li.selected {
+    background-color: rgba(255, 0, 0, 0.6);
+    color: white;
+}
+
+
+td, th{ 
+    border: 1px black solid;
+}

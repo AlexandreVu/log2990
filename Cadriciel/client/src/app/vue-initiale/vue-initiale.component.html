@@ -1,0 +1,25 @@
+<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+<div class="page">
+  <div class="titre">
+     <h1>
+        <img src="http://www.icône.com/images/icones/6/2/input-gaming-3.png" width="100px" height="100px">
+       Jeu des 7 Différences
+     </h1>
+  </div>
+  <div>
+    <h2>
+      Bienvenue {{nom}},  
+    </h2>
+    <h3>
+      Veuillez vous identifier :
+    </h3>
+  </div>
+
+  <label>
+    <mat-form-field>
+      <input matInput type="text" class="entree-nom" (keydown.enter)="entrer()" [(ngModel)]="nomInput" placeholder="Veuillez entrer votre nom.">
+    </mat-form-field>
+  </label>
+  <button mat-raised-button (click)= "entrer()" class="bouton-valider" >Valider</button>
+  <p class="messageErreur">{{message}}</p>
+</div>

@@ -1,4 +1,4 @@
-# Exclusion des dépendences du projet. Elles peuvent être regénérées 
+﻿# Exclusion des dépendences du projet. Elles peuvent être regénérées 
 # automatiquement.
 .nyc_output/
 node_modules/

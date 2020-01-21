@@ -1,0 +1,48 @@
+<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+<div [hidden]="!partieTerminee" class="boiteFinPartie">
+  <h1>PARTIE TERMINÉE</h1>
+  <div *ngIf="!partiePerdue" id="messagePartieTerminee">Félicitation! {{differencesAttendues}} différences trouvées en : {{chrono.minutes}} minutes et {{chrono.secondes}} secondes!</div>
+  <div *ngIf="partiePerdue" id="messagePartiePerdue">Dommage, vous avez perdu cette partie! Retournez à la sélection des parties pour essayer de nouveau.</div>
+  <button class="boutonFinPartie" (click)="retour()"> Retour </button>
+</div>
+<div [hidden]="!partieTerminee" id="cover"></div>
+<div id="erreurIdentification" [hidden]="!mauvaisClique">ERREUR</div>
+<div class="partie">
+  <h2 id= "titre" style="text-align: center;"></h2>
+  <div class="infoPartie">
+    <div style="padding-right: 25%; "><b>Infos de la partie: </b></div>
+    <div class="infoDifferences">
+      <div>Nombre de differences trouvees:</div>
+      <div class="compteur" id="compteurDifferences">{{differencesTrouvees}}</div>
+    </div>
+    <div>-</div>
+    <div class="infoTemps">
+      <div> Temps ecoule: </div>
+      <div class="compteur" id="compteurTemps">
+          <app-chronometre id="chrono" #chrono></app-chronometre>
+      </div>
+    </div>
+  </div>
+  <div class="zoneJeu">
+    <app-afficheur-scene3-d *ngIf="type" #scene3D></app-afficheur-scene3-d>
+    <div class="partieGauche" *ngIf="!type">
+      <h3 style="text-align: center">-Image de base-</h3>
+      <p style="text-align: center">
+        <img id="imageOriginale" class="image">
+      </p>
+    </div>
+    <div class="partieDroite" *ngIf="!type">
+        <h3 style="text-align: center">-Image avec differences-</h3>
+        <p style="text-align: center; padding-top: 2%;">
+          <img id="imageModifiee"  class="image">
+        </p>
+    </div>
+  </div>
+  <div class="evenements" id="evenements">
+    <div style="color: red"><h2 style="text-decoration: underline;">INFORMATIONS</h2></div>
+    <div *ngFor="let message of evenements" >
+      <div class="message">-{{message}}</div>
+    </div>
+  </div>
+</div>

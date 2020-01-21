@@ -1,0 +1,101 @@
+<body>
+  <div class="vueAdministration">
+    <div class="bandeEnHautFixe">
+      <div class="zoneBoutonJeu">
+        <button mat-raised-button id="btnOuvrirFormulaire">Créer un jeu en mode point de vue simple</button>
+      </div>
+      <div class="zoneBoutonJeu">
+        <button mat-raised-button id="btnOuvrirFormulaireLibre">Créer un jeu en mode point de vue libre</button>
+      </div>
+    </div>
+    <div [hidden]="!formulaireOuvert" style="position: sticky; padding-top: 10%;" id="formulaire">
+        <app-formulaire-jeu-simple></app-formulaire-jeu-simple>
+      </div>
+      <div [hidden]="!formulaireOuvert" id="cover"></div>
+      <div [hidden]="!formulaireOuvertLibre"  style="position: sticky" id="formulaireLibre">
+          <app-formulaire-jeu-libre></app-formulaire-jeu-libre>
+        </div>
+        <div [hidden]="!formulaireOuvertLibre" id="cover"></div>
+    <div class="contenuDePage">
+      <div class="zoneParties">
+        <div class="listeDesParties">
+          <ul class="parties">
+            <div *ngFor="let partie of gestionnaireDeParties.getPartiesSimple()" class="affichagePartie" [class.selected]="partie === partieSelectionnee">
+              <div class="zoneInfoPartie">
+                  <mat-card class="example-card">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title style="font-size: 200%;color: darkblue"> {{partie.nom}}</mat-card-title>
+                      </mat-card-header>
+                      <img mat-card-image src={{ADRESSE_SERVEUR}}{{partie.idImageOriginale}}>
+                      <mat-card-content>
+                          <table>
+                              <tr>
+                                <th>Position</th>
+                                <th>Solo</th>
+                                <th>Nom Joueur</th>
+                                <th>1 VS 1</th>
+                                <th>Nom Joueur</th>
+                              </tr>
+                              <tr *ngFor="let score of partie.scoresSolo; index as i">
+                                <th>{{i+1}}</th>
+                                <th>{{partie.scoresSolo[i].tempsString}}</th>
+                                <th>{{partie.scoresSolo[i].nomDuJoueur}}</th>
+                                <th>{{partie.scores1v1[i].tempsString}}</th>
+                                <th>{{partie.scores1v1[i].nomDuJoueur}}</th>
+                              </tr>
+                            </table>
+                      </mat-card-content>
+                      <mat-card-actions style="display: flex">
+                          <button mat-button (click)="gestionnaireDeParties.setPartieSelectionnee(partie);reinitialiserScores()">Réinitialiser les scores</button>
+                          <button mat-button (click)="gestionnaireDeParties.setPartieSelectionnee(partie);supprimerPartie()">Supprimer la partie</button>
+                      </mat-card-actions>
+                    </mat-card>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="zoneParties">
+        <div class="listeDesParties">
+          <ul class="parties">
+            <div *ngFor="let partie of gestionnaireDeParties.getPartiesLibre()" class="affichagePartie" [class.selected]="partie === partieSelectionnee">
+              <div class="zoneInfoPartie">
+                  <mat-card class="example-card">
+                      <mat-card-header>
+                        <div mat-card-avatar class="header-image-libre"></div>
+                        <mat-card-title style="font-size: 200%;color: darkblue">{{partie.nom}}</mat-card-title>
+                      </mat-card-header>
+                      <img mat-card-image src={{partie.idImageOriginale}} alt="Photo of a Shiba Inu">
+                      <mat-card-content>
+                          <table>
+                              <tr>
+                                <th>Position</th>
+                                <th>Solo</th>
+                                <th>Nom Joueur</th>
+                                <th>1 VS 1</th>
+                                <th>Nom Joueur</th>
+                              </tr>
+                              <tr *ngFor="let score of partie.scoresSolo; index as i">
+                                <th>{{i+1}}</th>
+                                <th>{{partie.scoresSolo[i].tempsString}}</th>
+                                <th>{{partie.scoresSolo[i].nomDuJoueur}}</th>
+                                <th>{{partie.scores1v1[i].tempsString}}</th>
+                                <th>{{partie.scores1v1[i].nomDuJoueur}}</th>
+                              </tr>
+                            </table>
+                      </mat-card-content>
+                      <mat-card-actions style="display: flex">
+                          <button mat-button (click)="gestionnaireDeParties.setPartieSelectionnee(partie);reinitialiserScores()">Réinitialiser les scores</button>
+                          <button mat-button (click)="gestionnaireDeParties.setPartieSelectionnee(partie);supprimerPartie()">Supprimer la partie</button>
+                      </mat-card-actions>
+                    </mat-card>
+                  </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-afficheur-scene3-d [hidden]="this.formulaireLibre.cacherScene" #scene3D></app-afficheur-scene3-d>
+</body>
