@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/generateur-scene/generateur-theme.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">src/app/generateur-scene</a> generateur-theme.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">99.05% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>104/105</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.88% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>46/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.12% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>16/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">99.04% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>103/104</span>
+      </div>
+    </div>
+    <p class="quiet">
+      Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+    </p>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">586x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">586x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">586x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">481x</span>
+<span class="cline-any cline-yes">481x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">118x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">180x</span>
+<span class="cline-any cline-yes">180x</span>
+<span class="cline-any cline-yes">180x</span>
+<span class="cline-any cline-yes">180x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">174x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">284x</span>
+<span class="cline-any cline-yes">284x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">279x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">272x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">271x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">154x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">586x</span>
+<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">586x</span>
+<span class="cline-any cline-yes">180x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">586x</span>
+<span class="cline-any cline-yes">284x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">586x</span>
+<span class="cline-any cline-yes">586x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">586x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as THREE from "three";
+import { Modele3D } from "../objet3-d/modele3d";
+import { Proprietes } from "../objet3-d/objet3-d";
+import { GenerateurScene } from "./generateur-scene";
+&nbsp;
+const COULEUR_ALIEN: number = 0x41CC4A;
+const COULEUR_ALIEN_ALT: number = 0x79B7B4;
+const COULEUR_AMIRAL: number = 0x772915;
+const COULEUR_AMIRAL_ALT: number = 0x961885;
+const COULEUR_COMET: number = 0x00FFF6;
+const COULEUR_COMET_ALT: number = 0x008CFF;
+const COULEUR_ROCHE: number = 0xA57548;
+const COULEUR_ROCHE_ALT: number = 0xD86D08;
+const COULEUR_SATELLITE: number = 0xB7B7B7;
+const COULEUR_SATELLITE_ALT: number = 0xFFFFFF;
+const COULEUR_FOND: number = 0x343F4F;
+const DECALAGE_JUPITER_X: number = 2400;
+const DECALAGE_JUPITER_Y: number = 400;
+const POSITION_DECALAGE: number = 650;
+const NOMBRE_COMET_MAX: number = 4;
+const NOMBRE_JUPITER_MAX: number = 1;
+const NOMBRE_SATELLITE_MAX: number = 5;
+const NOMBRE_VAISSEAU_AMIRAL_MAX: number = 2;
+const NOMBRE_VAISSEAU_MAITRE_ALIEN_MAX: number = 3;
+const TAILLE_COMET: number = 0.5;
+const TAILLE_VAISSEAU_COMBAT: number = 0.005;
+&nbsp;
+const NOMS_MODELES: string[] = ["VaisseauCombat",
+                                "Asteroide",
+                                "AsteroideB",
+                                "Alien",
+                                "VaisseauAlien",
+                                "VaisseauAmiral",
+                                "VaisseauMaitreAlien",
+                                "Satellite",
+                                "Comet",
+                                "Jupiter"];
+&nbsp;
+export class GenerateurThematique extends GenerateurScene {
+    private nombreCometConstruits: number;
+    private nombreJupiterConstruits: number;
+    private nombreSatellitesConstruits: number;
+    private nombreVaisseauAmiralConstruits: number;
+    private nombreVaisseauMaitreAlienConstruits: number;
+    public constructor() {
+        super();
+        this.nombreCometConstruits = 0;
+        this.nombreJupiterConstruits = 0;
+        this.nombreSatellitesConstruits = 0;
+        this.nombreVaisseauAmiralConstruits = 0;
+        this.nombreVaisseauMaitreAlienConstruits = 0;
+    }
+    public getNombreModeles(): number {
+        return NOMS_MODELES.length;
+    }
+    private estMembreFlotteHumaine(nomModele: string): boolean {
+        return nomModele === "VaisseauCombat" || nomModele === "VaisseauAmiral";
+    }
+    private estMembreFlotteAlien(nomModele: string): boolean {
+        return nomModele === "Alien" || nomModele === "VaisseauAlien" || nomModele === "VaisseauMaitreAlien";
+    }
+    private estUnDecor(nomModele: string): boolean {
+        return nomModele === "Asteroide" || nomModele === "AsteroideB" ||
+               nomModele === "Satellite" || nomModele === "Comet" || nomModele === "Jupiter";
+    }
+    private donnerCouleur(propriete: Proprietes, couleur: number, couleurAlt: number): void {
+        propriete.Couleur = couleur;
+        propriete.CouleurAlt = couleurAlt;
+    }
+    private genererProprieteHumains(propriete: Proprietes): void {
+        propriete.Rotation = new THREE.Vector3(0, 0, 0);
+        propriete.Position = new THREE.Vector3(propriete.Position.x, propriete.Position.y, propriete.Position.z - POSITION_DECALAGE);
+        if (this.nombreVaisseauAmiralConstruits &lt; NOMBRE_VAISSEAU_AMIRAL_MAX) {
+            propriete.Forme = "VaisseauAmiral";
+            propriete.Hauteur = this.genererTaille();
+            propriete.Rotation = new THREE.Vector3(0, Math.PI, 0);
+            this.donnerCouleur(propriete, COULEUR_AMIRAL, COULEUR_AMIRAL_ALT);
+            this.nombreVaisseauAmiralConstruits++;
+        } else {
+            if (propriete.Forme.valueOf() === "VaisseauAmiral") {
+                propriete.Forme = "VaisseauCombat";
+                propriete.Hauteur = this.genererTaille() * TAILLE_VAISSEAU_COMBAT;
+            }
+        }
+    }
+    private genererProprieteAlien(propriete: Proprietes): void {
+        propriete.Rotation = new THREE.Vector3(0, 0, 0);
+        propriete.Position = new THREE.Vector3(propriete.Position.x, propriete.Position.y, propriete.Position.z + POSITION_DECALAGE);
+        this.donnerCouleur(propriete, COULEUR_ALIEN, COULEUR_ALIEN_ALT);
+        if (this.nombreVaisseauMaitreAlienConstruits &lt; NOMBRE_VAISSEAU_MAITRE_ALIEN_MAX) {
+            propriete.Forme = "VaisseauMaitreAlien";
+            this.nombreVaisseauMaitreAlienConstruits++;
+        } else {
+            if (propriete.Forme.valueOf() === "VaisseauMaitreAlien") {
+                propriete.Forme = "VaisseauAlien";
+            }
+        }
+    }
+    private genererProprieteDecor(propriete: Proprietes): void {
+        this.donnerCouleur(propriete, COULEUR_ROCHE, COULEUR_ROCHE_ALT);
+        if (propriete.Forme.valueOf() === "Satellite" &amp;&amp; this.nombreSatellitesConstruits &lt; NOMBRE_SATELLITE_MAX) {
+            propriete.Rotation = new THREE.Vector3(0, propriete.Rotation.y, 0);
+            this.donnerCouleur(propriete, COULEUR_SATELLITE, COULEUR_SATELLITE_ALT);
+            this.nombreSatellitesConstruits++;
+        } else {
+            if (propriete.Forme.valueOf() === "Comet" &amp;&amp; this.nombreCometConstruits &lt; NOMBRE_COMET_MAX) {
+                propriete.Rotation = new THREE.Vector3(propriete.Rotation.x, 0, 0);
+                this.donnerCouleur(propriete, COULEUR_COMET, COULEUR_COMET_ALT);
+                this.nombreCometConstruits++;
+            } else {
+                if (propriete.Forme.valueOf() === "Jupiter" &amp;&amp; this.nombreJupiterConstruits &lt; NOMBRE_JUPITER_MAX) {
+                    propriete.Rotation = new THREE.Vector3(0, Math.PI * TAILLE_COMET, 0);
+                    propriete.Position = new THREE.Vector3(- DECALAGE_JUPITER_X, - DECALAGE_JUPITER_Y, 0);
+                    this.donnerCouleur(propriete, COULEUR_COMET, COULEUR_COMET_ALT);
+                    this.nombreJupiterConstruits++;
+                } else {
+                    if (propriete.Forme.valueOf() === "Comet" || propriete.Forme.valueOf() === "Satellite" ||
+                        propriete.Forme.valueOf() === "Jupiter") {
+                        propriete.Forme = "Asteroide";
+                    }
+                }
+            }
+        }
+    }
+    private appliquerThematique(propriete: Proprietes): void {
+        if (this.estMembreFlotteHumaine(propriete.Forme.valueOf())) {
+            this.genererProprieteHumains(propriete);
+        }
+        if (this.estMembreFlotteAlien(propriete.Forme.valueOf())) {
+            this.genererProprieteAlien(propriete);
+        }
+        if (this.estUnDecor(propriete.Forme.valueOf())) {
+            this.genererProprieteDecor(propriete);
+        }
+&nbsp;
+    }
+    protected genererProprietes(): Proprietes {
+        const propriete: Proprietes = this.genererProprieteBase(NOMS_MODELES[this.genererNombreEntier(0, NOMS_MODELES.length - 1)]);
+        this.appliquerThematique(propriete);
+&nbsp;
+        return propriete;
+    }
+    protected ajouterOriginal(propriete: Proprietes, scene: THREE.Scene): void {
+        scene.background = new THREE.Color(COULEUR_FOND);
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!propriete.Ajout) {
+            this.chargerObjet(propriete, scene);
+        }
+    }
+    protected ajouterModifie(propriete: Proprietes, scene: THREE.Scene): void {
+        scene.background = new THREE.Color(COULEUR_FOND);
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!propriete.Retrait) {
+            (propriete.ModCouleur ? <span class="branch-0 cbranch-no" title="branch not covered" >this.chargerObjetModifie(propriete, scene) </span>:
+                                    this.chargerObjet(propriete, scene));
+        }
+    }
+    private chargerModele(couleur: number, propriete: Proprietes, scene: THREE.Scene): Modele3D {
+        return new Modele3D(propriete, couleur, scene);
+    }
+    protected chargerObjet(propriete: Proprietes, scene: THREE.Scene): Modele3D {
+        return this.chargerModele(propriete.Couleur, propriete, scene);
+    }
+<span class="fstat-no" title="function not covered" >    protected chargerObjetModifie(</span>propriete: Proprietes, scene: THREE.Scene): Modele3D {
+<span class="cstat-no" title="statement not covered" >        return this.chargerModele(propriete.CouleurAlt, propriete, scene);</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Apr 19 2019 16:41:14 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+<script src="..\..\..\block-navigation.js"></script>
+</body>
+</html>
