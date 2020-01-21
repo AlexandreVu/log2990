@@ -1,0 +1,47 @@
+<div [hidden]="envoye">
+  <h1>Créer un jeu point de vue simple</h1>
+  <p>Format d'image: bitmap 24-bit (640x480)</p>
+  <hr>
+  <br>
+  <form [formGroup]="jeuSimpleForm" id="form" (ngSubmit)="valider()">
+    <mat-form-field>
+    <input matInput placeholder="Nom du jeu" type="text" formControlName="nomJeu" [ngClass]="{ 'invalide': essaiEnvoi && getControles().nomJeu.errors }"><br>
+    <mat-error *ngIf="essaiEnvoi && getControles().nomJeu.errors && !getControles().nomJeu.errors?.pattern" class="message-erreur">
+      Vous devez inscrire un nom de jeu comportant entre {{MIN_LONGUEUR_NOM}} et {{MAX_LONGUEUR_NOM}} charactères.<br>
+    </mat-error>
+    <mat-error *ngIf="essaiEnvoi && getControles().nomJeu.errors?.pattern" class="message-erreur">
+      Le nom de jeu ne peut contenir que des charactères alphanumériques.<br>
+    </mat-error>
+    </mat-form-field>
+    <br><br /><br />
+    <div><b>Image originale</b></div>
+    <input type="file" id="inputImageOriginale" formControlName="imageOriginale" accept="image/bmp" (change)="ajoutImageOriginale($event)"
+      [ngClass]="{ 'invalide': essaiEnvoi && getControles().imageOriginale.errors }"><br>
+    <div *ngIf="essaiEnvoi && getControles().imageOriginale.errors && !getControles().imageOriginale.errors?.mauvaisNom" class="message-erreur">
+      Vous devez télécharger une image originale de format bmp.<br>
+    </div>
+    <div *ngIf="essaiEnvoi && getControles().imageOriginale.errors?.mauvaisNom" class="message-erreur">
+      Le nom du fichier ne peut contenir que des charactères alphanumériques.<br>
+    </div><br>
+    <div><b>Image modifiée</b></div>
+    <input type="file" id="inputImageModifiee" formControlName="imageModifiee" accept="image/bmp" (change)="ajoutImageModifiee($event)"
+      [ngClass]="{ 'invalide': essaiEnvoi && getControles().imageModifiee.errors }"><br>
+    <div *ngIf="essaiEnvoi && getControles().imageModifiee.errors && !getControles().imageModifiee.errors?.mauvaisNom" class="message-erreur">
+      Vous devez télécharger une image modifiée de format bmp.<br>
+    </div>
+    <div *ngIf="essaiEnvoi && getControles().imageModifiee.errors?.mauvaisNom" class="message-erreur">
+      Le nom du fichier ne peut contenir que des charactères alphanumériques.<br>
+    </div><br>
+    <button mat-raised-button color="primary" type="submit" class="boutton_controle"> Envoyer </button>
+    <button mat-raised-button class="boutton_controle btnFermerFormulaire" type=button>Annuler</button>
+  </form>
+</div>
+<div class="confirmation-envoi" [hidden]="!envoye || !creationConfirme">
+  <h1>Envoi réussi!</h1><br>
+  <button mat-raised-button class="boutton_controle btnFermerFormulaire" type=button>Fermer</button>
+</div>
+<div class="confirmation-envoi" [hidden]="!envoye || creationConfirme">
+  <h1>Erreur</h1>
+  <p>{{messageErreur}}</p>
+  <button mat-raised-button class="boutton_controle btnFermerFormulaire" type=button>Fermer</button>
+</div>

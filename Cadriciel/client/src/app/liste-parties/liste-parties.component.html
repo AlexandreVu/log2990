@@ -1,0 +1,88 @@
+<div class="corps">
+  <header style="display:flex; flex-direction:row;">
+    <div class="gauche">Parties Simples</div>
+    <div class="droite">Parties Libres</div>
+  </header>
+  <div class="contenuDePage">
+    <div class="zoneParties">
+      <div class="listeDesParties">
+        <ul class="parties">
+          <div *ngFor="let partie of gestionnaireDeParties.getPartiesSimple(); index as i" class="affichagePartie" [class.selected]="partie === partieSelectionnee">
+            <div class="zoneInfoPartie">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title style="font-size: 200%;color: darkblue">{{partie.nom}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src={{ADRESSE_SERVEUR}}{{partie.idImageOriginale}}>
+                <mat-card-content>
+                  <table>
+                    <tr>
+                      <th>Position</th>
+                      <th>Solo</th>
+                      <th>Nom Joueur</th>
+                      <th>1 VS 1</th>
+                      <th>Nom Joueur</th>
+                    </tr>
+                    <tr *ngFor="let score of partie.scoresSolo; index as i">
+                      <th>{{i+1}}</th>
+                      <th>{{partie.scoresSolo[i].tempsString}}</th>
+                      <th>{{partie.scoresSolo[i].nomDuJoueur}}</th>                      
+                      <th>{{partie.scores1v1[i].tempsString}}</th>
+                      <th>{{partie.scores1v1[i].nomDuJoueur}}</th>                      
+                    </tr>
+                  </table>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button (click)="gestionnaireDeParties.setPartieSelectionnee(partie);jouer()">Jouer</button>
+                  <button mat-button id="{{i}}0" *ngIf = "!gestionnaireDeParties.getPartiesSimple()[i].partieEnLigne" (click)="gestionnaireDeParties.setPartieSelectionnee(partie);creerPartieUnContreUnSimple(i)">Créer partie 1 vs 1</button>
+                  <button mat-button id="{{i}}0" *ngIf = "gestionnaireDeParties.getPartiesSimple()[i].partieEnLigne" (click)="gestionnaireDeParties.setPartieSelectionnee(partie);joindrePartieSimple(i)">Joindre une partie en ligne</button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="zoneParties">
+      <div class="listeDesParties" >
+        <ul class="parties">
+          <div *ngFor="let partie of gestionnaireDeParties.getPartiesLibre(); index as i" class="affichagePartie" [class.selected]="partie === partieSelectionnee">
+            <div class="zoneInfoPartie">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      <div mat-card-avatar class="header-image-libre"></div>
+                      <mat-card-title style="font-size: 200%;color: darkblue">{{partie.nom}}</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image src={{partie.idImageOriginale}}>
+                    <mat-card-content>
+                      <table>
+                        <tr>
+                          <th>Position</th>
+                          <th>Solo</th>
+                          <th>Nom Joueur</th>
+                          <th>1 VS 1</th>
+                          <th>Nom Joueur</th>
+                        </tr>
+                        <tr *ngFor="let score of partie.scoresSolo; index as i">
+                          <th>{{i+1}}</th>
+                          <th>{{partie.scoresSolo[i].tempsString}}</th>
+                          <th>{{partie.scoresSolo[i].nomDuJoueur}}</th>                      
+                          <th>{{partie.scores1v1[i].tempsString}}</th>
+                          <th>{{partie.scores1v1[i].nomDuJoueur}}</th>                      
+                        </tr>
+                      </table>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-button (click)="gestionnaireDeParties.setPartieSelectionnee(partie);jouer()">Jouer</button>
+                      <button mat-button id="{{i}}1" *ngIf = "gestionnaireDeParties.getPartiesLibre()[i].partieEnLigne" (click)="gestionnaireDeParties.setPartieSelectionnee(partie);joindrePartieLibre(i)">Joindre une partie en ligne</button>
+                      <button mat-button id="{{i}}1" *ngIf = "!gestionnaireDeParties.getPartiesLibre()[i].partieEnLigne" (click)="gestionnaireDeParties.setPartieSelectionnee(partie);creerPartieUnContreUnLibre(i)">Créer partie 1 vs 1</button>
+                    </mat-card-actions>
+                  </mat-card>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

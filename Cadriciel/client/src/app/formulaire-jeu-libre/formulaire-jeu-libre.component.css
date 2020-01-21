@@ -1,0 +1,30 @@
+h1{
+    margin-bottom: -10px;
+}
+
+.boutton_controle{
+    margin-right: 10px;
+    width: 100px;
+    height: 35px;
+}
+
+form div{
+    display: inline;
+    margin-right: 15px;
+}
+
+input[type="text"].invalide{
+    border-color:red;
+}
+
+.message-erreur{
+    color:red;
+}
+
+/*.quantiteObjets {
+    width: 5%;
+}*/
+
+.minMaxObjets {
+    font-size: 60%;
+}

@@ -1,0 +1,13 @@
+.cadran{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Orbitron', sans-serif;
+    background-color: white;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.boite{
+    width: 100%;
+    display: inline-block;
+}

@@ -1,0 +1,241 @@
+
+body {
+	color: #434e57;
+	font-weight: normal;
+	font-style: normal;
+    font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+}
+
+header {
+    font-size: 250%;
+}
+
+.droite {
+    color: white;
+    background-image: linear-gradient(to left, grey, rgb(202, 202, 202, 0.9));
+    border-radius: 10px;
+    padding: 2%;
+    padding-left: 20%;
+    padding-right: 15%;
+    margin-left: 0.5%;
+}
+.gauche {
+    color: white;
+    background-image: linear-gradient(to right, grey, rgb(202, 202, 202, 0.9));
+    padding: 2%;
+    border-radius: 10px;   
+    padding-left: 13%;
+    padding-right: 15%;
+}
+.corps {
+	font-weight: normal;
+	font-style: normal;
+    font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif; 
+}
+
+button {
+    box-shadow: 2px 2px 1px #aaa;
+    border-left: 0.5px solid #aaa;
+    border-top: 0.5px solid #aaa;
+}
+.bandeEnHautFixe
+{
+    width: 100%;
+    height: 75px;
+    background-color: rgb(32, 77, 97, 0.8);
+    position: fixed;
+    margin: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    z-index: 3;
+}
+.zoneBoutonJeu{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenuDePage
+{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+}
+.vueAdministration .contenuDePage
+{
+    margin-top: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.zoneParties
+{
+    width: 50%;
+    margin: 50px;
+}
+.listeDesParties
+{
+    margin-top: -5%; 
+    min-height: 500px;
+    border-radius: 10px;
+    max-width: 55%;
+    margin-left: 120px;
+}
+
+ .zoneListeDesParties
+{
+    width: 50%;
+    margin: 50px;
+    margin-left: 100px;
+}
+.zoneAffichagePartie
+{
+    width: 50%;
+    margin: 50px;
+    margin-right: 100px;
+}
+.affichagePartie
+{
+    display: flex;
+    border-radius: 4px;
+    padding-bottom: 20px;
+}
+.affichagePartie .zoneInfoPartie
+{
+    width: 50%;
+    max-height: 90%;
+}
+.affichagePartie .zoneImagePartie
+{
+    width: 50%;
+    max-width: 50%;
+}
+.zoneImagePartie .imagePartie
+{
+    height : auto;
+    width : auto;
+    max-width: 100%;
+    z-index: 2;
+}
+
+.parties {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+
+}
+.parties div {
+    position: relative;
+    left: 0;
+    margin: .5em;
+    padding: .3em 0;
+
+}
+
+
+.scores {
+    position: relative;
+    width: 50%;
+    left: 2px;
+}
+
+#cover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    opacity: 2;
+}
+
+#formulaire{
+    height: 500px;
+    width: 600px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    opacity: 2;
+    border: 5px solid;
+    background-color: white;
+}
+
+app-formulaire-jeu-simple{
+    position:absolute;
+    padding: 30px;
+    width: 500px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+app-formulaire-jeu-libre{
+    position:absolute;
+    padding: 30px;
+    width: 500px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#formulaireLibre{
+    height: 650px;
+    width: 600px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    opacity: 2;
+    border: 5px solid;
+    background-color: white;
+}
+
+table
+{
+    border-collapse: collapse; 
+}
+
+th
+{
+    border: 0.5px solid grey;
+}
+
+.example-card {
+    width: 300px;
+    box-shadow: 2px 2px 1px #aaa;
+    border-left: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    max-height: 100%;
+    background-color:rgba(255, 255, 255, 0.8);
+}
+  
+.example-header-image {
+    background-image: url('https://st3.depositphotos.com/1458807/18175/v/1600/depositphotos_181751390-stock-illustration-2d-custom-logotype-vector-design.jpg');
+    background-size: cover;
+    border: 1px solid #aaa;
+}
+
+.header-image-libre {
+    background-image: url('https://cdn-images-1.medium.com/max/1600/1*DkRV3LHJbni8PCeF61Ck1A.png');
+    background-size: cover;
+    background-position: 70%;
+    border: 1px solid #aaa;
+}

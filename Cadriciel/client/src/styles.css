@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+    background-color: black;
+    background-image: url("https://i2.cdscdn.com/pdt2/0/3/0/1/700x700/auc3294270361030/rw/metro-triangle-fond-d-ecran-geometrique-triangle.jpg");
+}

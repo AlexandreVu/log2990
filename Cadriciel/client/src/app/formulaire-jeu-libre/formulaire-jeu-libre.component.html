@@ -1,0 +1,58 @@
+<div [hidden]="envoye">
+    <h1>Créer un jeu point de vue libre</h1>
+    <p>Format d'image: bitmap 24-bit (640x480)</p>
+    <hr>
+    <br>
+    <form [formGroup]="jeuLibreForm" id="form" (ngSubmit)="valider()">
+      <mat-form-field>
+      <input matInput type="text" placeholder="Nom du jeu" formControlName="nomJeu" [ngClass]="{ 'invalide': essaiEnvoi && getControles().nomJeu.errors }"><br>
+      <mat-error *ngIf="essaiEnvoi && getControles().nomJeu.errors && !getControles().nomJeu.errors?.pattern" class="message-erreur">
+        Vous devez inscrire un nom de jeu comportant entre {{MIN_LONGUEUR_NOM}} et {{MAX_LONGUEUR_NOM}} charactères.<br>
+      </mat-error>
+      <mat-error *ngIf="essaiEnvoi && getControles().nomJeu.errors?.pattern" class="message-erreur">
+        Le nom de jeu ne peut contenir que des caractères alphanumériques.<br>
+      </mat-error>
+    </mat-form-field>
+      <br><br />
+      <mat-form-field>
+        <mat-label>Type d'objets</mat-label>
+        <mat-select formControlName="typeObjetSelectionne">
+          <mat-option *ngFor="let item of typeObjets" [value]="item.typeObjet">{{item.typeObjet}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+        <div *ngIf="essaiEnvoi && this.getControles().typeObjetSelectionne.errors" class="message-erreur"><br>
+          Vous devez donner sélectionner un type d'objet.
+        </div>
+        <br />
+      <mat-form-field>
+        <input matInput placeholder="Quantité d'objets" type="text" formControlName="quantiteObjets" [ngClass]="{ 'invalide': essaiEnvoi && getControles().quantiteObjets.errors }"><br>
+        <mat-hint class="minMaxObjets">Min {{MIN_QUANTITE}}; Max {{MAX_QUANTITE}}</mat-hint>
+        <mat-error *ngIf="essaiEnvoi && getControles().quantiteObjets.errors && !getControles().quantiteObjets.errors?.pattern" class="message-erreur">
+          Vous devez donner une quantité d'objets entre {{MIN_QUANTITE}} et {{MAX_QUANTITE}}.<br />
+        </mat-error>
+        <mat-error *ngIf="essaiEnvoi && getControles().quantiteObjets.errors?.pattern" class="message-erreur">
+          La quantité d'objets ne doit contenir que des chiffres.<br />
+        </mat-error>
+      </mat-form-field>
+      <br /><br />
+      <div><b>Type de modifications</b></div><br /><br />
+      <mat-checkbox formControlName="modifications" (change)="nomModifications('ajout');ajouterModifications('modifications')"> Ajout</mat-checkbox><br />
+      <mat-checkbox formControlName="modifications" (change)="nomModifications('suppression');ajouterModifications('modifications')"> Suppression</mat-checkbox><br />
+      <mat-checkbox formControlName="modifications" (change)="nomModifications('changementCouleur');ajouterModifications('modifications')"> Changement de couleur</mat-checkbox><br />
+      <div *ngIf="essaiEnvoi && modificationsSelectionnees.length == 0" class="message-erreur">
+        Vous devez sélectionner au moins un type de modification.<br />
+        </div>
+      <br>
+      <button mat-raised-button color="primary" type="submit" class="boutton_controle"> Envoyer </button>
+      <button mat-raised-button class="boutton_controle btnFermerFormulaireLibre" type=button>Annuler</button>
+    </form>
+  </div>
+  <div class="confirmation-envoi" [hidden]="!envoye || !creationConfirme">
+    <h1>Envoi réussi!</h1><br>
+    <button mat-raised-button class="boutton_controle btnFermerFormulaireLibre" type=button (click)="captureScene();reinitialiser()" [disabled]="!this.serviceRendu.sceneGeneree">Fermer</button>
+  </div>
+  <div class="confirmation-envoi" [hidden]="!envoye || creationConfirme">
+    <h1>Erreur</h1>
+    <p>{{messageErreur}}</p>
+    <button mat-raised-button class="boutton_controle btnFermerFormulaireLibre" type=button>Fermer</button>
+  </div>
